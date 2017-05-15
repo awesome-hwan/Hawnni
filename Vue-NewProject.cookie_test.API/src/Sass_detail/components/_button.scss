@@ -1,0 +1,113 @@
+
+// 나가기
+.detail-contents--exit {
+  z-index: 9999;
+  // Desktops and Loptops and Tablets
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+  // Smartphones
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+  }
+}
+
+
+// 버튼을 감싼 영역
+.detail-contents__button--box {
+  // Desktops and Loptops and Tablets
+  @media screen and (min-width: 768px) {
+    float: right;
+    padding-right: 0.5em;
+  }
+  // Smartphones
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    // position: absolute;
+    // bottom: 0;
+    // right: 0;
+    float: right;
+    padding-right: 0.5em;
+  }
+}
+
+
+// 버튼
+.detail-contents--modify__button, .detail-contents--delete__button {
+  // Desktops and Loptops and Tablets
+  @media screen and (min-width: 768px) {
+    color: #fff;
+    background-color: #1d1d1d;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  // Smartphones
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    color: #fff;
+    background-color: #1d1d1d;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: 10px;
+  }
+}
+
+
+// arrow 버튼 감싼 영역
+.arrow-box {
+  // Desktops and Loptops and Tablets
+  @media screen and (min-width: 768px) {
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // margin-left: -450px;
+    // margin-top: -40px;
+    // min-width: 900px;
+    // display: flex;
+    // justify-content: space-between;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // Smartphones
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    display: none;
+  }
+}
+
+// arrow 버튼
+.detail-contents--arrow-left, .detail-contents--arrow-right {
+  // Desktops and Loptops and Tablets
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    background-color: transparent;
+    cursor: pointer;
+
+  }
+}
+.detail-contents--arrow-left {
+  top: 50%;
+  left: 20px;
+  margin-top: -40px;
+
+}
+
+.detail-contents--arrow-right {
+  top: 50%;
+  right: 20px;
+  margin-top: -40px;
+}

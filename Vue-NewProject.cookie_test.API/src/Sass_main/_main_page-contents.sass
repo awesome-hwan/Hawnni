@@ -1,0 +1,81 @@
+.main__contents
+  position: relative
+  width: rem(1220px)
+  margin: 0 auto
+  padding: 0
+  display: flex
+  justify-content: space-around
+  // flex-wrap: wrap
+  // row-reverse, wrap-reverse는 사진이 새로 생성된것들이 죄측 상단에 오게하기 위함입니다.
+  // justify-content: flex-end
+  flex-direction: row-reverse
+  flex-wrap: wrap-reverse
+  margin-top: 4rem
+
+
+  & .main__contents-item
+    position: relative
+    font-family: 'Caveat', cursive
+    display: block
+    +square(rem(400px))
+    padding: 10px 10px 50px 10px
+    margin: 10px 0 30px
+    &:hover
+      z-index: 50
+
+    &:hover .main__contents-link
+      // z-index: 110
+      +box_shadow(15px, 15px, 15px, 0.5)
+      +scale-size(1.2)
+
+    // &:hover .main__contents-item::after
+    //   z-index: 100
+    &:hover .main__contents-item-title
+
+      // opacity: 0.5
+      // hover시 after z-index 상승시키기
+    // &::after
+    //   content: "♥"
+    //   color: #df2d70
+    //   color: #03a9f4
+    //   font-size: rem(35px)
+    //   font-weight: bold
+    //   position: absolute
+    //   left: 50%
+    //   bottom: 0
+    //   transform: translateX(-50%)
+    //   opacity: 0
+    //   letter-spacing: 0.25rem
+      // background: url(../images/hart-icon.png) !important
+      // display: inline-block
+      // z-index: 1000
+      // +square(100px)
+      +transition-ease( 1s)
+    // &:hover::after
+    //   opacity: 1
+    //   +scale-size(1.2)
+  & .main__contents-link
+    +transition-ease
+    display: block
+    padding: rem(10px) rem(10px) 0 rem(10px)
+    background: #fff
+    width: 100%
+
+
+  & .main__contents-item-img
+    display: block
+    max-width: rem(360px)
+    min-height: rem(360px)
+
+  & .main__contents-item-title
+    +transition-ease
+    line-height: 1
+    position: relative
+    overflow: hidden
+    margin: 0
+    padding: 1em 0.5em
+    text-align: left
+    white-space: nowrap
+    color: #698b8d
+    background: #fff
+    text-overflow: ellipsis

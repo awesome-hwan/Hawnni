@@ -1,0 +1,52 @@
+@import 'loginSignup'
+
+.login__form
+	position: relative
+	width: 100%
+	& input
+		@extend %buttonInput
+
+legend,label,
+  @extend %hidden
+
+
+.login__button, .login__button-facebook
+
+	width: 100%
+  margin-bottom: 5px
+	border: 0
+	background: transparent
+	@extend %buttonInput
+
+.login__button
+	background: #da2f6f
+	color: #fff
+
+
+.login__button-facebook
+	background: #2686c1
+	display: flex
+	align-items: center
+	justify-content: center
+	color: #fff
+
+.fb__icon
+	background: url("../images/facebook.svg") no-repeat center
+	background-size: cover
+	width: 18px
+	height: 18px
+	display: inline-flex
+	align-items: center
+	margin-right: 5px
+
+.login__password-find
+	position: absolute
+	top: 59px
+	right: 5px
+
+
+.newuser__box
+	display: flex
+.newuser__text
+	margin-right: 5px
+	margin-bottom: 8px

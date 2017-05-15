@@ -1,0 +1,10 @@
+
+// 모달 윈도우
+.modal {
+  // Desktops and Loptops and Tablets
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+  }
+}
