@@ -1,0 +1,94 @@
+<template>
+
+  <div class="warpper">
+    <h1>버튼 효과주기</h1>
+    <button type="button" class="fill">옆으로 슝슝</button>
+    <button type="button" class="line-fill">선이 슝슝</button>
+    <button type="button" class="split-line-fill">선이 갈라져서 슝슝</button>
+  </div>
+
+</template>
+
+<script>
+export default {
+}
+</script>
+
+<style lang="sass" scoped>
+  *
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+  body
+    @extend %flex-center
+    height: 100vh
+    width: 100%
+
+  h1
+    display: flex
+    justify-content: center
+  %flex-center
+    justify-content: space-around
+    align-items: center
+    display: flex
+
+  .fill, .line-fill , .spllit-line-fill, .split-line-fill
+    position: relative
+    background: transparent
+    border: 0
+    padding: 3rem 5rem
+    transition: all 1s ease-in-out
+
+  .fill::after
+    position: absolute
+    background: rgb(69, 171, 198)
+    content: ''
+    top: 0
+    bottom: 0
+    right: 100%
+    left: 0
+    transition: all 1s ease-in-out
+    z-index: -10
+
+  .fill:hover::after
+    right: 0
+
+  .fill:hover
+    color: white
+
+  // line-fill 작동원리
+  .line-fill
+    overflow: hidden
+
+  .line-fill::after
+    content: ''
+    position: absolute
+    background: red
+    width: 100%
+    height: 100%
+    top: 97%
+    left: -100%
+    transition: all 1s ease-in-out
+
+  .line-fill:hover::after
+    left: 0
+
+  // position absolute를 사용하여
+  // 가상요소에 width, height를 주지 않고
+  // 길이를 조정하였다.
+  .split-line-fill::after
+    position: absolute
+    content: ''
+    background: rgb(113, 50, 142)
+    top: 97%
+    bottom: 0
+    right: 50%
+    left: 50%
+    transition: all 1s ease-in-out
+
+  .split-line-fill:hover::after
+    right: 0
+    left: 0
+
+</style>
