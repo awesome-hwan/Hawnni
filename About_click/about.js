@@ -3,7 +3,7 @@ var body = document.querySelector("body");
 var wrapper = document.querySelector(".wrapper")
 var red = document.querySelector(".red");
 var blue = document.querySelector(".blue");
-var black = document.querySelector(".black");
+var yellow = document.querySelector(".yellow");
 var gray = document.querySelector(".gray");
 
 // console.log('red :', red);
@@ -15,7 +15,7 @@ var gray = document.querySelector(".gray");
 // blue.onclick = function () {
 //   wrapper.setAttribute("style", "transform: translateY(-200%)")
 // };
-// black.onclick = function () {
+// yellow.onclick = function () {
 //   wrapper.setAttribute("style", "transform: translateY(-300%)")
 // };
 // gray.onclick = function () {
@@ -34,12 +34,12 @@ red.onclick = function () {
 blue.onclick = function () {
   blue.classList.remove( 'active' );
   blue.classList.add( 'old-hat' );
-  black.classList.add('active');
+  yellow.classList.add('active');
 
 }
-black.onclick = function () {
-  black.classList.remove('active');
-  black.classList.add( 'old-hat' );
+yellow.onclick = function () {
+  yellow.classList.remove('active');
+  yellow.classList.add( 'old-hat' );
   gray.classList.add('active');
 
 }
