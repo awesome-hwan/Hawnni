@@ -9,82 +9,102 @@ var gray = document.querySelector(".gray");
 
 // z-index 변경하여 색상 변경
 // transition 적용 안됨
-red.onmousewheel = function (e) {
+// red.onmousewheel = function (e) {
+//
+//
+//  if ( red.getAttribute("style") === blue.getAttribute("style")) {
+//   red.classList.remove('active');
+//
+//   red.classList.add( 'old-hat' );
+//
+//   blue.classList.add( 'active' )
+//
+// } else {
+//
+//     red.classList.remove( 'old-hat' );
+// }
+//
+//
+//
+//   // console.log("red")
+// };
 
-console.log( "red.scrollHeight 1 :" , red.pageYOffset)
- if (red.getAttribute("style") > blue.getAttribute("style")) {
-  red.classList.remove('active');
-console.log( "red.scrollHeight 2 :" , red.scrollTop)
-  red.classList.add( 'old-hat' );
-  console.log( "red.scrollHeight 3 :" , red.scrollTop)
-  blue.classList.add( 'active' )
-console.log( "red.scrollTop 3 :" , red.scrollTop)
-} else {
-
-    red.classList.remove( 'old-hat' );
-}
-
-
-
-  // console.log("red")
-};
-blue.onmousewheel = function () {
-    console.log( "red.scrollTop 4 :" , blue.scrollTop);
-  if( blue.getAttribute("style") > yellow.getAttribute("style")){
-console.log( "red.scrollTop 5 :" , blue.scrollTop);
-  blue.classList.remove('active');
-  blue.classList.add('old-hat');
-  yellow.classList.add('active');
-} else {
-  blue.classList.remove( 'old-hat' );
-}
-};
-yellow.onmousewheel = function () {
-  if ( yellow.getAttribute("style") > gray.getAttribute("style")) {
-  yellow.classList.remove('active');
-  yellow.classList.add('old-hat');
-  gray.classList.add('active');
-} else {
-    yellow.classList.remove('old-hat')
+$(red).on("mousewheel", function (event) {
+  if(event.originalEvent.wheelDelta < 0) {
+    red.classList.remove('active');
+    red.classList.add( 'old-hat' );
+    blue.classList.add( 'active' )
   }
+  return false
+  });
+$(blue).on("mousewheel", function (event) {
+  if(event.originalEvent.wheelDelta < 0) {
+    blue.classList.remove('active');
+    blue.classList.add( 'old-hat' );
+    yellow.classList.add( 'active' )
+  } else if ( event.originalEvent.wheelDelta > 0 ){
+      blue.classList.remove( 'active' );
+      blue.classList.add( 'old-hat' );
+      red.classList.remove( 'old-hat' );
+      red.classList.add('active');
+  }
+  return false
+  });
+$(yellow).on("mousewheel", function (event) {
+  if(event.originalEvent.wheelDelta < 0) {
+    yellow.classList.remove('active');
+    yellow.classList.add( 'old-hat' );
+    gray.classList.add( 'active' )
+  } else if ( event.originalEvent.wheelDelta > 0 ){
+      yellow.classList.remove( 'active' );
+      blue.classList.add('active');
+      console.log(event.originalEvent.wheelDelta)
+  }
+  return false
+  });
+$(red).on("mousewheel", function (event) {
+  if(event.originalEvent.wheelDelta > 0) {
 
-}
-gray.onmousewheel = function () {
-  console.log("gray.classList.length :", gray.classList.length)
-}
+      gray.classList.remove( 'active' );
+  }
+  return false
+  });
+//
+// red.onmousewheel = function (e) {
+//  if ( e.originalEvent.wheelDelta < 0 ) {
+//   red.classList.remove('active');
+//   red.classList.add( 'old-hat' );
+//   blue.classList.add( 'active' )
+// } else {
+//     red.classList.remove( 'old-hat' );
+// }
+// return false
+// };
 
-
-function yHandler () {
-
-var contentHeight = wrapper.clientHeight;
-console.log("contentHeight :",contentHeight);
-var Yoffset = window.pageYOffset;
-
-var y = Yoffset + window.innerHeight;
-// console.log("y :", y )
-if (contentHeight === y) {
-  var red_index = red.getAttribute("style", "z-index")
-  // console.log("z-index : ",red_index)
-  red.classList.remove('active');
-  red.classList.add( 'old-hat' );
-  // blue.classList.add( 'active' );
-
-
-}
- else if( y === "727") {
-  //  console.log("blue에서 y" , y)
-  blue.classList.remove( 'active' );
-  blue.classList.add( 'old-hat' );
-  yellow.classList.add('active');
-  // return contentHeight + 2;
-}
-// else if ( contentHeight + 2 !== y ) {
+//
+// blue.onmousewheel = function (e) {
+//   if( e.originalEvent.wheelDelta < 0){
+//   blue.classList.remove('active');
+//   blue.classList.add('old-hat');
+//   yellow.classList.add('active');
+// } else {
+//   blue.classList.remove( 'old-hat' );
+// }
+// return false
+// };
+// yellow.onmousewheel = function (e) {
+//   if ( e.originalEvent.wheelDelta < 0) {
 //   yellow.classList.remove('active');
-//   yellow.classList.add( 'old-hat' );
+//   yellow.classList.add('old-hat');
 //   gray.classList.add('active');
-//   return false;
+// } else {
+//     yellow.classList.remove('old-hat');
+//     return false;
+//   }
+// }
+// gray.onmousewheel = function (e) {
+//   if( e.originalEvent.wheelDelta > 0 ) {
+//   }
 // }
 
-};
-
-// window.onmousewheel = yHandler;
+// $(red).on("mousewheel", function (event) { console.log(event.originalEvent.wheelDelta ) });
