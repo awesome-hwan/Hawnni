@@ -43,3 +43,23 @@ yellow.onclick = function () {
   gray.classList.add('active');
 
 }
+
+gray.ondblclick = function () {
+  gray.classList.remove('active');
+  gray.classList.add('new-hat')
+  yellow.classList.remove('old-hat');
+  yellow.classList.add('active')
+}
+
+yellow.ondblclick = function () {
+  yellow.classList.remove('active');
+  yellow.classList.add('new-hat')
+  blue.classList.remove('old-hat');
+  blue.classList.add('active')
+}
+blue.ondblclick = function () {
+  blue.classList.remove('active');
+  blue.classList.add('new-hat')
+  red.classList.remove('old-hat');
+  red.classList.add('active')
+}

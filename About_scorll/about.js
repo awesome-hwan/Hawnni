@@ -1,110 +1,214 @@
 
-var body = document.querySelector("body");
-var wrapper = document.querySelector(".wrapper")
+
 var red = document.querySelector(".red");
 var blue = document.querySelector(".blue");
 var yellow = document.querySelector(".yellow");
 var gray = document.querySelector(".gray");
 
 
-// z-index 변경하여 색상 변경
-// transition 적용 안됨
-// red.onmousewheel = function (e) {
-//
-//
-//  if ( red.getAttribute("style") === blue.getAttribute("style")) {
-//   red.classList.remove('active');
-//
-//   red.classList.add( 'old-hat' );
-//
-//   blue.classList.add( 'active' )
-//
-// } else {
-//
-//     red.classList.remove( 'old-hat' );
-// }
-//
-//
-//
-//   // console.log("red")
-// };
 
-$(red).on("mousewheel", function (event) {
-  if(event.originalEvent.wheelDelta < 0) {
-    red.classList.remove('active');
-    red.classList.add( 'old-hat' );
-    blue.classList.add( 'active' )
-  }
-  return false
+// function <-> switch
+// $(red).on("mousewheel", function (event) {
+//   if( event.originalEvent.wheelDelta < 0 ) {
+//     red.classList.add( 'old-hat' );
+//     console.log("Time",(new Date()).getTime())
+//   }
+//
+//   });
+// $(blue).on("mousewheel", function (event) {
+//   if(event.originalEvent.wheelDelta < 0) {
+//     blue.classList.add( 'old-hat' );
+//   } else {
+//     red.classList.remove( 'old-hat' );
+//   }
+//   });
+// $(yellow).on("mousewheel", function (event) {
+//   if(event.originalEvent.wheelDelta < 0) {
+//     yellow.classList.add( 'old-hat' );
+//   } else {
+//     blue.classList.remove( 'old-hat' );
+//   }
+//   });
+//
+// $(gray).on("mousewheel", function (event) {
+//   if(event.originalEvent.wheelDelta > 0) {
+//     yellow.classList.remove( 'old-hat' );
+//     }
+//   });
+
+//**********************경계선***********************
+
+
+var color = [red, blue, yellow, gray];
+var wrap = $("body");
+console.log(wrap)
+var panelsize = 100;
+var step = 10;
+var interval = 1000;
+var direction = 1;
+var currentTop = parseInt(wrap.css("top"));
+var bAnimation = false;
+function animation() {
+  setTimeout(function() {
+
+
+    if (direction < 0) {
+      if (currentTop <= minValue) {
+        setTimeout(function() {
+          bAnimation = false;
+        }, interval);
+        return;
+      }
+    } else {
+      if (currentTop >= minValue) {
+        setTimeout(function() {
+          bAnimation = false;
+        }, interval);
+        return;
+      }
+    }
+
+    wrap.css({
+      "top": currentTop - step
+    });
+    animation();
+  }, 16);
+}
+
+for ( i = 0; i < color.length ; i++ ){
+
+
+
+switch ( color[i] ) {
+
+
+
+case red: $(red).on("mousewheel DOMMouseScroll", function (event) {
+  if( event.originalEvent.wheelDelta < 0 ) {
+   event.preventDefault();
+  minValue = currentTop - panelsize;
+red.classList.add( 'old-hat' ); }
+   animation()
+console.log('hellow')
+
   });
-$(blue).on("mousewheel", function (event) {
-  if(event.originalEvent.wheelDelta < 0) {
-    blue.classList.remove('active');
+
+  break;
+
+
+case blue: $(blue).on("mousewheel DOMMouseScroll", function (event) {
+
+
+  if(event.originalEvent.wheelDelta < 0 ) {
+     event.preventDefault();
+      minValue = currentTop - panelsize;
     blue.classList.add( 'old-hat' );
-    yellow.classList.add( 'active' )
-  } else if ( event.originalEvent.wheelDelta > 0 ){
-      blue.classList.remove( 'active' );
-      blue.classList.add( 'old-hat' );
-      red.classList.remove( 'old-hat' );
-      red.classList.add('active');
+
+     animation()
+
+
+  } else {
+    red.classList.remove( 'old-hat' );
+     animation()
+
   }
-  return false
   });
-$(yellow).on("mousewheel", function (event) {
-  if(event.originalEvent.wheelDelta < 0) {
-    yellow.classList.remove('active');
+
+  break;
+
+case yellow: $(yellow).on("mousewheel DOMMouseScroll", function (event) {
+
+  if(event.originalEvent.wheelDelta < 0 ) {
+     event.preventDefault();
+     minValue = currentTop - panelsize;
+
     yellow.classList.add( 'old-hat' );
-    gray.classList.add( 'active' )
-  } else if ( event.originalEvent.wheelDelta > 0 ){
-      yellow.classList.remove( 'active' );
-      blue.classList.add('active');
-      console.log(event.originalEvent.wheelDelta)
-  }
-  return false
+     animation()
+
+
+  } else {
+    blue.classList.remove( 'old-hat' );
+    animation()
+   }
+
   });
-$(red).on("mousewheel", function (event) {
+  break;
+
+case gray: $(gray).on("mousewheel DOMMouseScroll", function (event) {
+
   if(event.originalEvent.wheelDelta > 0) {
-
-      gray.classList.remove( 'active' );
-  }
-  return false
+     event.preventDefault();
+     minValue = currentTop - panelsize;
+    yellow.classList.remove( 'old-hat' );
+    animation();
+    }
   });
-//
-// red.onmousewheel = function (e) {
-//  if ( e.originalEvent.wheelDelta < 0 ) {
-//   red.classList.remove('active');
-//   red.classList.add( 'old-hat' );
-//   blue.classList.add( 'active' )
-// } else {
-//     red.classList.remove( 'old-hat' );
-// }
-// return false
-// };
+  break;
+  animation()
+ }
+}
+
 
 //
-// blue.onmousewheel = function (e) {
-//   if( e.originalEvent.wheelDelta < 0){
-//   blue.classList.remove('active');
-//   blue.classList.add('old-hat');
-//   yellow.classList.add('active');
-// } else {
-//   blue.classList.remove( 'old-hat' );
-// }
-// return false
-// };
-// yellow.onmousewheel = function (e) {
-//   if ( e.originalEvent.wheelDelta < 0) {
-//   yellow.classList.remove('active');
-//   yellow.classList.add('old-hat');
-//   gray.classList.add('active');
-// } else {
-//     yellow.classList.remove('old-hat');
-//     return false;
+//################################# 경계선 #############################
+//
+// (function() {
+//   var currentPanel = 1;
+//   var wrap = $('body');
+//   var panelsize = 600;
+//   var step = 10;
+//   var interval = 1000;
+//   var direction = 1;
+//
+//   var bAnimation = false;
+//
+//   function animation() {
+//     setTimeout(function() {
+//       var currentTop = parseInt(wrap.css("old-hat"));
+//
+//       if (direction < 0) {
+//         if (currentTop <= minValue) {
+//           setTimeout(function() {
+//             bAnimation = false;
+//           }, interval);
+//           return;
+//         }
+//       } else {
+//         if (currentTop >= minValue) {
+//           setTimeout(function() {
+//             bAnimation = false;
+//           }, interval);
+//           return;
+//         }
+//       }
+//
+//       wrap.css({
+//         "old-hat": currentTop - step
+//       });
+//       animation();
+//     }, 16);
 //   }
-// }
-// gray.onmousewheel = function (e) {
-//   if( e.originalEvent.wheelDelta > 0 ) {
-//   }
-// }
-
-// $(red).on("mousewheel", function (event) { console.log(event.originalEvent.wheelDelta ) });
+//
+//   $(window).bind('mousewheel DOMMouseScroll', function(event) {
+//     event.preventDefault();
+//     if (bAnimation) return;
+//
+//     var currentTop = parseInt(wrap.css("old-hat"));
+//
+//     if (event.originalEvent.wheelDelta < 0) {
+//       //down scroll
+//       minValue = currentTop - panelsize;
+//       step = 10;
+//       direction = -1;
+//     } else {
+//       //up scroll
+//       minValue = currentTop + panelsize;
+//       step = -10;
+//       direction = 1;
+//     }
+//
+//     console.log(minValue, bAnimation);
+//     bAnimation = true;
+//     animation();
+//   });
+// })();
