@@ -37,7 +37,7 @@ z-index활용 및 position absolute를 이용하고 클래스 부여하는 방�
 
 ---
 
-[Button효과 바로보기](awesome-hwan.github.io/Hawnni/Sololearn/CSS(Sass)/Button_Effect/)
+[ Button효과 바로보기 ]( https://awesome-hwan.github.io/Hawnni/Sololearn/CSS(Sass)/Button_Effect/ )
 
 <details>
 
