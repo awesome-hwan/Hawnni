@@ -8,10 +8,13 @@
 
 <details>
 
-<summary> Scroll 이벤트 구현중 </summary>
-작업기간: 5월 20일 ~ ing  
-구현목표: [리니지M](https://lineagem.plaync.com/), [텀블러](https://www.tumblr.com/) 사이트에 사용되는 스크롤 이벤트 구현  
----
+<summary> (현) Scroll 이벤트 구현중 </summary>  
+작업기간: 5월 20일 ~ ing   
+
+모델: [리니지M](https://lineagem.plaync.com/), [텀블러](https://www.tumblr.com/) 사이트에 사용되는 스크롤 이벤트 구현  
+
+---  
+
 ### 리니지 M  
 
 transition: translateY를 이동하는 방식으로 구현  
