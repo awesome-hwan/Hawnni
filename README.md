@@ -8,7 +8,9 @@
 
 <details>
 
-<summary> **(현) Scroll 이벤트 구현중** </summary>
+<summary>
+**(현) Scroll 이벤트 구현중**
+</summary>
 
 #### 작업기간  
 
