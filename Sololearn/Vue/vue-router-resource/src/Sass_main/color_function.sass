@@ -1,0 +1,31 @@
+$twilight: rgb(248, 167, 36)
+$lips    : rgb(255, 111, 66)
+$angry   : rgb(229, 57,  53)
+$hotpink : rgb(235, 63, 121)
+$wood    : rgb(140, 109, 98)
+$nobility: rgb(125, 86, 193)
+$sense   : rgb(119, 143,155)
+$moden   : rgb(104, 109, 98)
+$jandy   : rgb(103, 158, 55)
+$sea     : rgb(91, 106, 191)
+$darken  : rgb(65,  65,  65)
+$sad     : rgb(29, 135, 228)
+$sandle  : rgb(0 , 171, 192)
+//
+// = color-random( $color: $moden )
+//   background: $color
+// ,$hotpink ,$wood ,$nobility ,$sense ,$moden ,$jandy ,$sea ,$darken ,$sad ,$sandle
+@each $colors in #{$twilight} ,#{$lips} ,#{$angry}
+  .#{$colors}-icon
+    background: $colors
+
+// @each $animal in puma, sea-slug, egret, salamander
+//
+//   .#{$animal}-icon
+//     background-image: url('/images/#{$animal}.png')
+
+
+// Map
+@each $header, $size in (h1: 2em, h2: 1.5em, h3: 1.2em)
+  #{$header}
+    font-size: $size

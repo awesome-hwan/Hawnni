@@ -1,0 +1,199 @@
+@import 'setting.normalize'
+@import 'login.signup.color.size.sass'
+@import 'haru.login.signup.mixin.sass'
+@import 'login.signup.common.style.sass'
+
+//wrapper
+
+//total-box 로그인 /회원가입 공통스타일 적용
+
+.login__image
+  width: $login__image-width
+  height: $login__image-height
+  background: url("../images/login-img.png") no-repeat
+  background-size: 90%
+//
+.login__box
+  width: $login__box_width
+  height: $login__box_height
+  background: $login__box_color
+  border-radius: $login__box_border_radius
+  margin-bottom: 10px
+  position: relative
+
+
+
+    //로고랑 타이틀 가운데 정렬
+.login__title, .login__logo
+  text-align: center
+  margin-bottom: 16px
+
+//폼영역
+//폼 공통 스타일 적용
+
+//라벨이랑 레전드 숨김
+
+
+[class*="login__input"]
+  // @extend %input_style
+  margin-bottom: 4px
+// .login__legend, .login__label-password, .login__label-email
+//   @extend %hidden
+
+//
+
+// .login__input-email, .login__input-password
+//   @extend %input_style
+
+.login__input-password
+  margin-bottom: 10px
+
+// .login__button
+//   @extend %input_style
+//   height: 30px
+//   background: transparent
+//   border: 0
+//   background: $login__button_color
+//   color: #fff
+//   margin-bottom: 10px
+
+//라인 또는 공통스타일
+
+.login__button-facebook
+  background: transparent
+  border: 0
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+
+// facebook icon webfont로 같이 적용하고, 회원가입에서  color만 바꾸는 쪽으로 수정 할 것
+.fb__icon
+  background: url("../images/fb-icon.png") no-repeat
+  background-size: 100%
+  display: inline-block
+  width: 18px
+  height: 18px
+  background-position: center
+
+.login__facebook
+  color: #385185
+  font-size: 16px
+
+.login__password-find
+  position: absolute
+  right: 40px
+  top: 45px
+  font-size: 14px
+  color: #003569
+
+//유저박스 공통 스타일 적용
+// .newuser__box
+
+
+
+
+////////////////////////////////////////////////////////////
+////   반응형 모바일 부터 적용
+////// 375px 너무 작지 않나 일단 홈페이지 크기로 적용
+////// ////////////////////////////////////////////////////
+@media screen and (max-width: 430px)
+  .wrapper
+    width: 100%
+    background: #fafafa
+    min-height: 100vh
+    overflow: hidden
+  .login__total-box,.signup__total-box
+    padding-top: 0
+
+  .login__container,.signup__container
+    margin: 0
+
+  .login__image
+    display: none
+
+  .login__items-box,.signup__items-box
+    max-width: 100%
+    justify-content: space-between
+
+  .login__box
+
+    width: 100%
+    margin-bottom: 0
+    position: relative
+    padding: 10px 0
+    background: transparent
+
+  .signup__form,.login__form
+    width: 100%
+    padding: 0 40px
+
+  .login__password-find
+    right: 65px
+
+  [class*=__line]
+    display: inline-block
+    width: 40%
+    height: 1px
+    background: #c7c7c7
+
+
+
+  .newuser__box,.user__box
+    background: transparent
+    width: 100%
+
+  .download__app
+    margin-bottom: 100px
+    margin-top: 90px
+
+  .login__footer,.signup__footer
+    background: transparent
+
+  .login__fotter-items,.signup__fotter-items
+    max-width: 360px
+    padding: 10px 0
+    text-align: center
+    padding: 0
+    height: 4.5em
+    display: block
+
+  .haru__link-list
+    display: block
+    & li
+      display: inline-block
+      & a
+        color: #003569
+
+///////////////////////////////////////////////////////////
+//// 태블릿
+//////////////////////////////////////////////////////////
+@media screen and (min-width:430px) and (max-width:875px)
+  .wrapper
+    width: 100%
+    background: #fafafa
+    min-height: 100vh
+    overflow: hidden
+  .login__total-box,.signup__total-box
+    justify-content: center
+
+  .login__container,.signup__container
+    margin: 0
+
+  .login__image
+    display: none
+
+  .login__fotter-items,.signup__fotter-items
+      max-width: 360px
+      padding: 10px 0
+      text-align: center
+      padding: 0
+      height: 4.5em
+      display: block
+
+  .haru__link-list
+    display: block
+    & li
+      display: inline-block
+      & a
+        color: #003569

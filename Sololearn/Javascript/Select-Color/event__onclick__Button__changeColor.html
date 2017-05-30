@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>event_transition</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <nav class="color_select">
+    <ul>
+      <li><a href="#">red</a></li>
+      <li><a href="#">blue</a></li>
+      <li><a href="#">green</a></li>
+      <li><a href="#">skyblue</a></li>
+      <li><a href="#">메뉴</a></li>
+    </ul>
+  </nav>
+  <div class="color">
+    <span class="view__color__red"></span>
+    <span class="view__color__blue"></span>
+    <span class="view__color__green"></span>
+    <span class="view__color__skyblue"></span>
+  </div>
+
+  <script>
+  for(i=0; i<= 3; i++) {
+    var btn = document.getElementsByTagName('a')[i]
+    var color = document.getElementsByTagName('span')[i]
+    // console.log(color)
+  };
+  // 클래스를 가지고 있지 않으면 클래스를 추가한다.
+  // 클래스를 가지고 있으면 클래스를 삭제한다.
+
+    var btn_red = document.getElementsByTagName('a')[0];
+    var color = document.getElementsByTagName('span')[0];
+    btn_red.onclick = function() {
+    color.style.background = 'red';
+    //나머지가  style 속성을 가지고있을때 삭제, 없으면 추가.
+
+
+  }
+
+    var btn_blue = document.getElementsByTagName('a')[1];
+    var color = document.getElementsByTagName('span')[1];
+    btn_blue.onclick = function() {
+    color.style.background = 'blue';
+
+  }
+
+
+    var btn_green = document.getElementsByTagName('a')[2];
+    var color = document.getElementsByTagName('span')[2];
+    btn_green.onclick = function() {
+    color.style.background = 'green';
+
+    }
+
+    var btn_skyblue = document.getElementsByTagName('a')[3];
+    var color = document.getElementsByTagName('span')[3];
+    console.log(color);
+    btn_skyblue.onclick = function() {
+    color.style.background = 'skyblue';
+
+    }
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+@charset 'utf-8'
+
+@import url(https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css)
+@import 'main_page-modules', 'main_page-function', 'setting.normalize' , 'main_page__card-component'
+a
+  color: black
+
+.container
+  +width-center-auto(rem(975px))
+%main__years-flex
+  margin-top: rem(32px)
+  height: rem(64px)
+  display: flex
+
+%main__years-center
+  +width-center-auto(rem(160px))
+  font-size: rem(32px)
+  line-height: rem(64px)
+%main__emotions-setting
+  +main__contents-size(rem(170px))
+  line-height: rem(85px)
+  margin-top: rem(32px)
+
+  // margin-left: rem(43px)
+  // line-height: rem(96px)
+
+
+%main__emotions-background
+  background-image: url(../images/emotion.png)
+  background-repeat: no-repeat
+  background-size: rem(640px)
+  margin-left: rem(56px)
+  margin-top: rem(32px)
+  overflow: hidden
+  +square(8rem)
+//감정의 글씨를 삭제하기위해 overflow: hidden
+//#########################
+//######################### header area #########################
+//#########################
+.header
+  display: flex
+  justify-content: space-around
+  & .header__logo
+      +square(rem(64px))
+      overflow: hidden
+      & img
+        +square(rem(64px))
+  & .header__logout
+    line-height: rem(64px)
+    letter-spacing: 0.02rem
+    +transition-ease
+    &:hover
+      +scale-size(1.5)
+.main
+  +width-center-auto(rem(975px))
+.main__years
+  @extend %main__years-flex
+  & .main__years-heading
+    @extend %main__years-center
+
+  & .main__years-list
+    @extend %main__years-center
+    +transition-ease
+    margin-left: rem(30px)
+    &:hover
+      +scale-size
+.main__emotions
+  margin-top: rem(32px)
+  height: rem(64px)
+  display: flex
+  flex-wrap: wrap
+  // background: red
+  // align-items: center
+  justify-content: space-around
+  & .main__emotions-heading
+    +width-center-auto(rem(975px))
+    @extend %main__emotions-setting
+
+  & .main__emotions-happy
+    @extend %main__emotions-setting
+    &::before
+      +virtual-before($twilight)
+      +transition-ease
+    &:hover::before
+      height: 3rem
+  & .main__emotions-sad
+    @extend %main__emotions-setting
+    &::before
+      +virtual-before($sad)
+      +transition-ease
+    &:hover::before
+      height: 0rem
+  & .main__emotions-anger
+    // @extend %main__emotions-background
+    @extend %main__emotions-setting
+    &::before
+      +virtual-before($angry)
+      +transition-ease
+    &:hover::before
+      height: 1.5rem
+  & .main__emotions-fear
+    // @extend %main__emotions-background
+    @extend %main__emotions-setting
+    &::before
+      +virtual-before($moden)
+      +transition-ease
+    &:hover::before
+      height: 2rem
+  & .main__emotions-disgust
+    // @extend %main__emotions-background
+    @extend %main__emotions-setting
+    &::before
+      +virtual-before($jandy)
+      +transition-ease
+    &:hover::before
+      height: 2rem
+  // 감정상태 텍스트를 가리기위해 사용
+  // a
+  //   text-indent: rem(160px)
+//#########################
+//######################### main-start area #########################
+//#########################
+%main__img_h1-position
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  top: 0
+  // 정사각형 비율을 유지하기 위해 width, padding-bottom을 같게 함
+%main__contents-size
+  +main__contents-size(rem(305px))
+
+.main__contents
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  padding: 0
+  position: relative
+  margin-top: rem(192px)
+  cursor: pointer
+  text-align: left
+  & .main__page-card
+    overflow: hidden
+    margin-bottom: rem(30px)
+    & .main__page-card__body
+      &:nth-child(1)
+        +color-random($moden)
+      &:nth-child(2)
+        +color-random($sad)
+      &:nth-child(3)
+        +color-random($lips)
+      &:nth-child(4)
+        +color-random($jandy)
+      &:nth-child(5)
+        +color-random($twilight)
+      &:nth-child(6)
+        +color-random($moden)
+      &:nth-child(7)
+        +color-random($sense)
+      &:nth-child(8)
+        +color-random($sense)
+      &:nth-child(9)
+        +color-random($twilight)
+      & .main__page-card__header-img
+        +transition-ease
+      &:hover .main__page-card__header-img
+        +scale-size
+  // // main__contents에 대한 입력값을 막았다.
+  // & a
+  // //   // @extend %main__contents-size
+  // //   position: relative
+  // //   // width: 100%
+  // //   // padding-bottom: 50%
+  // //   // height: 0
+  // //   margin-bottom: rem(30px)
+  // //   overflow: hidden
+
+    // &:hover img
+    //   +scale-size
+    // & img
+    //   @extend %main__img_h1-position
+    //   max-width: 100%
+    //   min-height: 100%
+    //   +transition-ease
+    // & h2
+    //   @extend %main__img_h1-position
+    //   +square(100%)
+    //   z-index: 100
+    //   display: flex
+    //   align-items: center
+    //   opacity: 0
+    //   +transition-ease
+    // &:hover h2
+    //   opacity: 1
+    //   align-items: center
+    //   background: rgba(#3B8EDE, 0.75)
+    //   color: white
+
+.main__button-position
+  text-align: center
+
+%main__button-form
+  border: 2px solid #3B8EDE
+  border-radius: 7.5rem
+  color: #3B8EDE
+  background: white
+  +square(rem(120px))
+  +width-center-auto(120px)
+  cursor: pointer
+
+.main__button-lodamore, .main__button-textadd
+  @extend %main__button-form
+.main__button-lodamore
+  margin-top: rem(64px)
+.main__button-textadd
+  position: fixed
+  bottom: 1.5rem
+  right: 1.5rem
+  z-index: 200
+//#########################  main-end area #########################
+//#########################
+//######################### footer area #########################
+
+.footer
+  display: flex
+  justify-content: space-around
+  flex-wrap: wrap
+  margin-top: rem(96px)
+  margin-bottom: rem(32px)
+  & .footer__haru-copyright
+    line-height: rem(24px)
+
+//######################### footer area #########################
+//#########################
+//######################### media screen tablet
+//#########################
+//######################### header area #########################
+@media screen and (max-width: 920px)
+
+  .container
+    +width-center-auto(100%)
+  .header
+    width: 100%
+    justify-content: space-around
+  .main
+    width: 100%
+  .main__years
+    width: 100%
+    flex-wrap: wrap
+    justify-content: space-between
+    & .main__years-heading
+      +width-center-auto(50%)
+    & .main__years-list
+      +width-center-auto(50%)
+  .main__emotions
+    margin-top: rem(64px)
+  .main__contents
+    margin-top: rem(320px)
+    justify-content: space-around
+  .footer
+    width: 100%
+    justify-content: space-around
+    & .footer__haru-copyright
+      +width-center-auto(100%)
+      margin-top: rem(64px)
+      display: block
+@media screen and (max-width: 551px)
+  //중간에 감정이 하나 내려와서 설정
+  .main__contents
+    margin-top: rem(480px)
+    justify-content: space-around
+  .main__emotions
+    justify-content: space-around
+    margin-right: rem(64px)
+  .main__emotions-heading
+    padding-left: rem(64px)
+
+@media screen and (max-width: 432px)
+  // 모바일 사이즈 375px 로 잡아도됨
+  .main__contents
+    margin-top: rem(640px)
+
+  .main__emotions a
+    width: 100%
+
+    margin-left: rem(64px)

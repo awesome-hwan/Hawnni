@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS3 3D card Flip</title>
+  <link rel="stylesheet" href="card-flip-sololearn.css">
+</head>
+<body>
+
+  <!-- <figure class="card-proto">card</figure> -->
+<div class="wrapper">
+    <div class="flip-card top">
+      <figure class="flip-card__front">Front</figure>
+      <figure class="flip-card__back">Back</figure>
+    </div>
+    <!-- <div class="flip-card top">
+      <figure class="flip-card__front">Front</figure>
+      <figure class="flip-card__back">Back</figure>
+    </div>
+    <div class="flip-card top">
+      <figure class="flip-card__front">Front</figure>
+      <figure class="flip-card__back">Back</figure>
+    </div>
+    <div class="flip-card middle">
+      <figure class="flip-card__front">Front</figure>
+      <figure class="flip-card__back">Back</figure>
+    </div>
+    <div class="flip-card middle">
+      <figure class="flip-card__front">Front</figure>
+      <figure class="flip-card__back">Back</figure>
+    </div>
+    <div class="flip-card middle">
+      <figure class="flip-card__front">Front</figure>
+      <figure class="flip-card__back">Back</figure>
+    </div>
+    <div class="flip-card bottom">
+      <figure class="flip-card__front">Front</figure>
+      <figure class="flip-card__back">Back</figure>
+    </div>
+    <div class="flip-card bottom">
+      <figure class="flip-card__front">Front</figure>
+      <figure class="flip-card__back">Back</figure>
+    </div>
+    <div class="flip-card bottom">
+      <figure class="flip-card__front">Front</figure>
+      <figure class="flip-card__back">Back</figure>
+    </div> -->
+  </div>
+  <!-- <div class="flip-card">
+    <figure class="flip-card__front">Front</figure>
+    <figure class="flip-card__back">Back</figure>
+  </div>
+  <div class="flip-card">
+    <figure class="flip-card__front">Front</figure>
+    <figure class="flip-card__back">Back</figure>
+  </div> -->
+
+
+
+
+  <script>
+
+  var card = document.getElementsByClassName('flip-card');
+  console.log(card);
+
+  for (var i = 0; i < card.length; i = i + 1 ) {
+
+
+    var front_face = card[i].children[0];
+    console.log(front_face);
+
+    var back_face = card[i].children[1];
+    console.log(back_face);
+
+
+    // this.parentNode를 사용해가 작동됨
+    // card[i]를 사용하면 안됨
+
+    front_face.onclick = function () {
+
+      this.parentNode.style.cssText = 'transform: rotateY(180deg) translateX(100%)';
+    };
+
+    back_face.onclick =  function () {
+      this.parentNode.style.cssText = '';
+    }
+}
+    // 리스트에 있는 각각의 앞,뒷면 요소를 가져온다.
+    // for (var i = 0; i  < flip_card[i].cildren[i].length -1 ; i = i+1 ) {
+    //   var flip_card = document.getElementsByClassName('flip-card');
+    //   var first_flip_card = flip_card[0];
+    //   var front_face = flip_card[0].children[0];
+    //   var back_face = flip_card[0].children[1];
+    //
+    //   front_face.onclick = function () {
+    //
+    //     first_flip_card.style.cssText = 'transform: rotateY(180deg) translateX(100%)';
+    //
+    //   }
+    //   back_face.onclick = function () {
+    //     back_face.parentNode.style.cssText = '';
+    //   }
+    //
+    // }
+    // 변수에 담는다.
+    // 클릭시 뒤집힌다.
+    // 다시 클릭시 다시 뒤집힌다.
+    // for (var i = 0; i = flip.children.length - 1, ) {
+    //
+    // }
+  </script>
+</body>
+</html>

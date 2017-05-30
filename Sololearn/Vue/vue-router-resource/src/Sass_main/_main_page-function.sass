@@ -1,0 +1,11 @@
+// $base: 16 !default
+
+// 단위제거함수
+@function de-unit($unit)
+  @return $unit/($unit*0+1)
+// px 에서 em
+@function em($px, $base: 16)
+  @return de-unit($px)/$base * 1em
+// px 에서 rem
+@function rem($px, $base: 16)
+  @return de-unit($px)/$base * 1rem

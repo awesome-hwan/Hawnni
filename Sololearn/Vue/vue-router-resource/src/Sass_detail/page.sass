@@ -1,0 +1,222 @@
+@import "./normalize/_setting.normalize.sass"
+
+$card_info: ".card__info"
+$media_desk: "screen and ( min-width: $break_pad + 1 )"
+$media_pad: "screen and ( min-width: $break_phone + 1) and ( max-width: $break_pad)"
+$media_phone: "screen and ( max-width: $break_phone )"
+
+$break_phone: 450px
+$break_pad: 1024px
+$desk_pad_width: 640px
+
+@mixin clear_pix
+  content: ''
+  display: block
+  clear: both
+
+@mixin margin_auto
+  margin: 0 auto
+
+@mixin button($font-size, $padding, $border-radius, $background-color)
+  font-size: $font-size
+  padding: $padding
+  border-radius: $border-radius
+  background-color: $background-color
+
+@mixin desk_pad_width-height
+  width: $desk_pad_width
+  height: $desk_pad_width
+
+.card__info
+  @media #{$media_desk}
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-left: -490px
+    margin-top: -320px
+    width: 980px
+    display: flex
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3)
+
+  @media #{$media_pad}
+
+    background-color: #82cdbb
+    width: $desk_pad_width
+    margin: 10% auto 0 auto
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3)
+  @media #{$media_phone}
+    background-color: #16670a
+    width: 95%
+    margin: 0 2.5%
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3)
+
+  &--image
+    @media #{$media_desk}
+      height: 640px
+    @media #{$media_pad}
+      position: relative
+      height: 640px
+      & img
+        position: absolute
+        width: 100%
+        height: auto
+
+    @media #{$media_phone}
+      width: 100%
+      position: relative
+      padding-bottom: 100%
+      overflow: hidden
+      & img
+        position: absolute
+        width: 100%
+
+  &--contents
+    @media #{$media_desk}
+      background-color: #80c95c
+      width: 340px
+      position: relative
+    @media #{$media_pad}
+      position: relative
+      padding-left: 10px
+      padding-right: 10px
+      &::after
+        @include clear_pix
+    @media #{$media_phone}
+      position: relative
+      padding: 2%
+      &::after
+        @include clear_pix
+
+  &--title
+    @media #{$media_desk}
+      background-color: #1118d7
+      padding: 10px
+      font-size: 1.6rem
+      font-weight: 300
+    @media #{$media_pad}
+      padding-top: 10px
+      padding-bottom: 10px
+    @media #{$media_phone}
+      background-color: #1ec966
+      font-size: 1.5rem
+      font-weight: 300
+      padding: 2% 0
+
+  &--emotions
+    @media #{$media_desk}
+      background-color: #a7ac49
+      display: flex
+      justify-content: space-around
+      padding-top: 5px
+      padding-bottom: 5px
+      & li
+        height: 40px
+        & img
+          width: 40px
+          height: 40px
+
+    @media #{$media_pad}
+      position: absolute
+      top: -15px
+      right: 30px
+      width: 180px
+      display: flex
+      justify-content: space-between
+      &::after
+        @include clear_pix
+      & li
+        height: 30px
+    @media #{$media_phone}
+      position: absolute
+      top: -20px
+      left: 50%
+      width: 50%
+      margin-left: -10%
+      display: flex
+      justify-content: space-between
+      & li
+        height: 40px
+        & img
+          width: 40px
+          height: 40px
+
+  &--text
+    @media #{$media_desk}
+      padding: 10px
+      height: 480px
+      background-color: #32fcf4
+    @media #{$media_pad}
+      font-size: 1.1rem
+      padding-top: 10px
+      padding-bottom: 10px
+    @media #{$media_phone}
+      background-color: #5a93cf
+      font-weight: 200
+      padding: 2% 0
+
+  &--date
+    @media #{$media_desk}
+      position: absolute
+      bottom: 10px
+      left: 10px
+      font-size: 1.1rem
+
+    @media #{$media_pad}
+      font-size: 0.8rem
+      display: inline-block
+      padding-top: 1.8rem
+    @media #{$media_phone}
+      background-color: #d13c69
+      font-size: 0.9rem
+      float: left
+      margin-top: 24px
+  &--button-box
+    @media #{$media_desk}
+      position: absolute
+      bottom: 10px
+      right: 10px
+    @media #{$media_pad}
+      float: right
+      padding-top: 5px
+    @media #{$media_phone}
+      background: #40e051
+      float: right
+  &--modify-button, &--delete-button
+    @media #{$media_desk}
+      @include button(1rem, 0.5rem 1rem, 3px, #214f91)
+    @media #{$media_pad}
+      @include button(0.9rem, 0.6rem 1.2rem, 3px, #bbbeeb)
+    @media #{$media_phone}
+      @include button(1rem, 0.7rem 1.2rem, 3px, #bbeb42)
+
+.arrow__box
+  @media #{$media_desk}
+    // background-color: #8e4256
+    width: 1200px
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-top: -42px
+    margin-left: -600px
+    display: flex
+    justify-content: space-between
+  @media #{$media_pad}
+    position: absolute
+    top: 40%
+    left: 50%
+    margin-left: -400px
+    width: 800px
+    z-index: -99
+    display: flex
+    justify-content: space-between
+  @media #{$media_phone}
+    display: none
+
+
+.arrow__prev, .arrow__next
+
+  @media #{$media_desk}
+    padding: 10px
+    background-color: #fff
+  @media #{$media_pad}
+    background-color: #fff

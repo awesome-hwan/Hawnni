@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+   <div id="app">
+      <my-component></my-component>
+   </div>
+<script>
+
+//전역 컴포넌트 등록
+Vue.component( 'my-component', {
+              template: `<div>사용자 지정 컴포넌트</div>` })
+
+// var Child = {
+//   template: `<div>사용자 지정 컴포넌트입니다.</div>`
+// }
+
+var vm = new Vue ({
+  el: '#app',
+  // components: { 'my-component': Child}
+})
+</script>
+</body>
+</html>

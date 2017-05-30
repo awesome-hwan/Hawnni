@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue_modal_window</title>
+  <link rel="stylesheet" href="../css/bulma.min.css">
+  <link rel="stylesheet" href="../css/vue_modal_window.css">
+</head>
+<body>
+  <div id="app">
+    <modal_window v-if="is_visible" @close="closeModal"></modal_window>
+  </div>
+<script src="https://unpkg.com/vue@2.2.4/dist/vue.js"></script>
+<script>
+
+var modal ={
+    template:
+    `
+    <div class="modal is-active">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+      <div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Component
+    </p>
+    <a class="card-header-icon">
+      <span class="icon">
+        <i class="fa fa-angle-down"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+      <a>@bulmaio</a>. <a>#css</a> <a>#responsive</a>
+      <br>
+      <small>11:09 PM - 1 Jan 2016</small>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a class="card-footer-item">Save</a>
+    <a class="card-footer-item">Edit</a>
+    <a class="card-footer-item">Delete</a>
+  </footer>
+</div>
+      </div>
+      <button
+      @click="$emit('close')"
+      class="modal-close"
+      ></button>
+    </div>
+`}
+
+var vm = new Vue({
+  el: '#app',
+  components: {'modal_window': modal},
+  data : {
+    is_visible: true
+  },
+  methods : {
+   closeModal: function() {
+      this.is_visible = false
+    }
+  }
+})
+</script>
+</body>
+</html>
