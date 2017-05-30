@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>audio_practice</title>
+  <link rel="stylesheet" href="css/bluma.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="flip-cover">
+<!-- 커버 -->
+<div class="play-window">
+  <div class="cover-size">
+      <div class="coverlist"></div>
+  </div>
+  <!-- 로딩바 -->
+  <figure class="flip-card__back">
+      <div class="seekbar">
+        <div class="seekbar-progress"></div>
+      </div>
+  <!-- 버튼 모음 -->
+    <div class="button-module">
+      <button class="music-play button is-primary">play</button>
+      <button class="music-pause button">pause</button>
+      <button class="music-stop button is-danger">stop</button>
+    </div>
+  <!-- 시간 표현 -->
+      <div><span class="current-time">00:00</span> | <span class="duration-time">00:00</span></div>
+  </figure>
+
+</div>
+  <div class="move-button">
+    <button type="button" class="previous button"> 이전 </button>
+    <button type="button" class="next button"> 다음 </button>
+  </div>
+
+</div>
+
+
+<script src="js/Audio.js"></script>
+<script src="js/Audio_data.js"></script>
+<script src="js/Audio_Move_Button.js"></script>
+
+
+</body>
+</html>

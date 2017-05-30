@@ -1,0 +1,41 @@
+
+%input_style
+  width: 100%
+  height: $input_height
+  padding: 9px 8px 7px
+  border-radius: $input_border_radius
+  border: 1px solid #dbdbdb
+  color: #262626
+  font-size: 14px
+ 
+%center_box
+  position: fixed
+  top: $top
+  left: $left
+  transform: translate(-50%)
+
+//스크린터에서 읽기가능 + 포커스 적용
+%hidden
+	overflow: hidden
+	position: absolute
+	clip: rect(0 0 0 0)
+	clip: rect(0, 0, 0, 0)
+	width: 1px
+	height: 1px
+	margin: -1px
+	border: 0
+	padding: 0
+
+	// 스크린리더에서는 읽기 가능 + 포커스 적용
+	&%focusable:active,&%focusable:focus
+		overflow: visible
+		position: static
+		clip: auto
+		width: auto
+		height: auto
+		margin: 0
+
+%download_button_style
+  width: 130px
+  height: 40px
+  border: none

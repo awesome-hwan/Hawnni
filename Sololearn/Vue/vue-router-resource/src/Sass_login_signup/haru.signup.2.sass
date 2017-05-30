@@ -1,0 +1,177 @@
+@import 'setting.normalize'
+@import 'login.signup.color.size'
+@import 'haru.login.signup.mixin.sass'
+@import 'login.signup.common.style.sass'
+
+
+// wrapper공통스타일에서  height 10vh늘림
+.wrapper
+  min-height: 100vh
+
+// totalbox 공통스타일에서  height 10vh늘림
+.signup__total-box
+  min-height: 100vh
+
+.signup__image
+  width: $signup__image-width
+  height: $signup__image-height
+  background-size: 90%
+
+.signup__box
+  width: $signup__box_width
+  height: $signup__box_height
+  background: $signup__box_color
+  border-radius: $signup__box_border_radius
+  margin-bottom: 10px
+  padding: $signup__box_border_padding
+  text-align: center
+
+.signup__intro
+
+  font-size: 1em
+  line-height: 20px
+  margin: 0 30px 10px
+  // text-align: center
+  color: #999
+  font-weight: 600
+// intro 줄 맞춤 나중에 조절 할 것
+
+.signup__button-facebook
+  @extend %input_style
+  background: transparent
+  border: 0
+  background: $login__button_color
+  color: #fff
+  font-size: 1em
+
+  display: flex
+  justify-content: center
+  align-items: center
+  margin: 0 auto
+
+//플렉스 믹스인이나 extend로 적용하는 것이 좋을 듯 :D
+
+
+// [class*="signup__label"], .signup__legend
+//   @extend %hidden
+
+[class*="signup__input"]
+  // @extend %input_style
+  margin-bottom: 4px
+
+// .signup__button 공통 스타일
+
+
+.signup__article
+  margin: 10px 25px
+  color: #999
+  font-size: 14px
+
+// .user__box  공통 스타일 적용
+
+
+//다운 로드 영역 공통 스타일 적용
+
+
+
+
+
+
+
+
+
+
+
+
+///반응형 적용
+///반응형
+
+
+
+////////////////////////////////////////////////////////////
+////   반응형 모바일 부터 적용
+////// 375px 너무 작지 않나 일단 홈페이지 크기로 적용
+////// ////////////////////////////////////////////////////
+@media screen and (max-width: 430px)
+  .wrapper
+    width: 100%
+    background: #fafafa
+    min-height: 100vh
+    overflow: hidden
+  .login__total-box,.signup__total-box
+    padding-top: 0
+
+  .login__container,.signup__container
+    margin: 0
+
+  .login__image,.signup__image
+    display: none
+
+  .login__items-box,.signup__items-box
+    max-width: 100%
+    justify-content: space-between
+
+  .login__box,.signup__box
+
+    width: 100%
+    margin-bottom: 0
+    position: relative
+    padding: 10px 0
+    background: transparent
+
+  .signup__form,.login__form
+    width: 100%
+    padding: 0 40px
+
+  .newuser__box,.user__box
+    background: transparent
+    width: 100%
+
+  .download__app
+    margin-bottom: 100px
+    margin-top: 90px
+
+  .login__footer,.signup__footer
+    background: transparent
+
+  .login__fotter-items,.signup__fotter-items
+    max-width: 360px
+    padding: 10px 0
+    text-align: center
+    padding: 35px 0
+    display: block
+
+  .haru__link-list
+    display: block
+    & li
+      display: inline-block
+
+///////////////////////////////////////////////////////////
+//// 태블릿
+//////////////////////////////////////////////////////////
+@media screen and (min-width:430px) and (max-width:875px)
+  .wrapper
+    width: 100%
+    background: #fafafa
+    min-height: 100vh
+    overflow: hidden
+  .login__total-box,.signup__total-box
+    justify-content: center
+
+  .login__container,.signup__container
+    margin: 0
+
+  .login__image,.signup__image
+    display: none
+
+  .login__fotter-items,.signup__fotter-items
+      max-width: 360px
+      padding: 10px 0
+      text-align: center
+      padding: 35px 0
+      display: block
+
+  .haru__link-list
+    display: block
+    & li
+      display: inline-block

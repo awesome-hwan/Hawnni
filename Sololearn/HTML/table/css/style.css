@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+table, tr, td, th{
+  border: 1px solid black;
+  border-collapse:collapse;
+  padding: 20px;
+  box-sizing: border-box;
+}
+th {
+  padding-right: 60px;
+  white-space: nowrap;
+  text-align: left;
+}
+table {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  width: 1032px;
+  margin: 0 auto;
+
+}
+.text-hidden {
+  position: absolute;
+  top: -9999px;
+}
+
+.img {
+  background: url(../images/photo-artist.jpg) 50% no-repeat;
+  height: 100vh;
+
+}
+
+/*# sourceMappingURL=data:application/json;base64,ewoJInZlcnNpb24iOiAzLAoJImZpbGUiOiAiY3NzL3N0eWxlLmNzcyIsCgkic291cmNlcyI6IFsKCQkic2Fzcy9zdHlsZS5zYXNzIgoJXSwKCSJuYW1lcyI6IFtdLAoJIm1hcHBpbmdzIjogIiIKfQ== */
