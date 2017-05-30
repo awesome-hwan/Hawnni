@@ -30,6 +30,7 @@ h1 {
   height: 195px;
   transition: all 1s ease-in-out;
   transform: translateY(0%);
+
 }
 
 .face-window:hover {
@@ -58,7 +59,7 @@ p {
   color: white;
 }
 
-.face-angry img {
+.face-angry {
   width: 259px;
   height: 195px;
 }
@@ -75,12 +76,12 @@ p {
 
 .face-sadness img {
   width: 259px;
-  height: 195px;
+  min-height: 195px;
 }
 
 .back-face-sadness {
-  width: 259px;
   height: 195px;
+  width: 259px;
   background: #0e68bb;
 }
 
