@@ -101,6 +101,7 @@ top:97%, right:50%, bottom:0, left:50% 를 주어 가상요소가 오른쪽, 왼
 ### [반응형 Flex]( https://awesome-hwan.github.io/Hawnni/Sololearn/CSS(Sass)/Flex%20Patten/ )
 
 <details>  
+
 <summary>반응형 Flex <summary>
 
 #### 목적  
@@ -146,12 +147,10 @@ order사용하여 위치 변경.
   order: 2;}
 .module__colwarpper:nth-child(3){
   order: 1;}
-
 ```  
 
 1과 3의 위치를 변경하려했을떄 2번의 order을 설정하지 않았을경우
 order의 기본값은 0이 되어 2번이 맨 앞으로 오게되어 의도하지 않은 결과가 도출됨.  
-
 
 </details>  
 
