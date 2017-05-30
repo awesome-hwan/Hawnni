@@ -98,11 +98,11 @@ top:97%, right:50%, bottom:0, left:50% 를 주어 가상요소가 오른쪽, 왼
 
 ---  
 
-### [반응형 Flex]( https://awesome-hwan.github.io/Hawnni/Sololearn/CSS(Sass)/Flex%20Patten/ )
+### [반응형 Flex]( https://awesome-hwan.github.io/Hawnni/Sololearn/CSS(Sass)/Flex%20Patten/ )  
 
 <details>  
 
-<summary>반응형 Flex <summary>
+<summary> 반응형 Flex </summary>
 
 #### 목적  
 
