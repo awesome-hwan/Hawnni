@@ -1,0 +1,68 @@
+body
+  margin: 0
+  height: 100%
+
+%common
+  height: 100vh
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  transform: translateY(0%)
+  transition: all 700ms cubic-bezier(0.77, 0, 0.175, 1)
+
+.wrapper
+  width: 100%
+  height: 100%
+  position: relative
+
+.window_box
+  height: 100%
+  position: relative
+
+.first
+  background: red
+  z-index: 5
+  @extend %common
+.second
+  background: blue
+  z-index: 4
+  @extend %common
+.third
+  background: yellow
+  z-index: 3
+  @extend %common
+.four
+  background: gray
+  z-index: 2
+  @extend %common
+
+
+.old-hat
+  transform: translateY(-100%)
+
+
+//status
+
+.status
+  position: relative
+  width: 16px
+  height: 200px
+  z-index: 10
+  display: flex
+  flex-flow: column
+  justify-content: space-around
+  & li
+    width: 16px
+    height: 16px
+    border: 3px solid black
+    border-radius: 50%
+    transform: translate(100%, 1500%)
+    opacity: .4
+    &:hover
+      opacity: 1
+  & .active
+    background: #000
+    opacity: 1
