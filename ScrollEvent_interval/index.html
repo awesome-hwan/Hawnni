@@ -12,17 +12,47 @@
 
 <div class="wrapper">
 
+  <header class="header">
+    <div class="header__logo">
+      <h1 class="header__logo-h1">텀블러</h1>
+      <a href="#"><img class="header__logo-img" src="./images/white-t.png" alt="텀블러 로고"></a>
+    </div>
+
+  </header>
+
+
   <div class="window_box" >
+
+
 
     <ul class="status">
       <li class="status__first active"></li>
       <li class="status__second"></li>
       <li class="status__third"></li>
       <li class="status__four"></li>
+      <li class="status__five"></li>
+      <li class="status__six"></li>
+
+
     </ul>
 
     <div class="first completely">
-      <p>one pages</p>
+
+      <div class="first__main">
+        <h1 class="first__text">tumblr.</h1>
+
+        <form class="login__form">
+          <fieldset class="login__fieldset">
+            <legend class="login__legend">tumblr 로그인 페이지</legend>
+              <label  for="user-email">이메일</label>
+              <input class="login__input-email" name="email" type="email" id="user-email" placeholder="이메일" required>
+              <label for="user-password">비밀번호</label>
+              <input class="login__input-password" name="password" type="password" id="user-password" placeholder="비밀번호" minlength="8" required>
+              <button class="login__button">로그인</button>
+
+          </fieldset>
+        </form>
+      </div>
     </div>
 
     <div class="second">
@@ -36,8 +66,19 @@
     <div class="four">
       <p>four pages</p>
     </div>
+
+    <div class="five">
+      <p>five pages</p>
+    </div>
+
+    <div class="six">
+      <p>six pages</p>
+    </div>
+
+
   </div>
 </div>
-<script src="about.js"></script>
+<script src="./dist/bundle.js"></script>
+
 </body>
 </html>

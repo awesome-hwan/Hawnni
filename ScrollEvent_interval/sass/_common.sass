@@ -1,6 +1,9 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css)
+
 body
   margin: 0
   height: 100%
+  font-family: 'Nanum Gothic'
 
 %common
   height: 100vh
@@ -23,22 +26,29 @@ body
   position: relative
 
 .first
-  background: red
-  z-index: 5
+  // background: red
+  z-index: 7
   @extend %common
 .second
   background: blue
-  z-index: 4
+  z-index: 6
   @extend %common
 .third
   background: yellow
-  z-index: 3
+  z-index: 5
   @extend %common
 .four
   background: gray
+  z-index: 4
+  @extend %common
+.five
+  background: green
+  z-index: 3
+  @extend %common
+.six
+  background: rgb(161, 51, 194)
   z-index: 2
   @extend %common
-
 
 .old-hat
   transform: translateY(-100%)
@@ -49,20 +59,37 @@ body
 .status
   position: relative
   width: 16px
-  height: 200px
+  height: 100vh
   z-index: 10
   display: flex
   flex-flow: column
-  justify-content: space-around
+  justify-content: center
+  // align-items: center
   & li
     width: 16px
     height: 16px
-    border: 3px solid black
+    border: 3px solid white
     border-radius: 50%
-    transform: translate(100%, 1500%)
-    opacity: .4
+    opacity: .6
+    margin-top: 10px
+    margin-left: 50px
     &:hover
       opacity: 1
   & .active
-    background: #000
+    background: #fff
     opacity: 1
+
+.header
+  position: fixed
+  z-index: 10
+  top: 0px
+  left: 0px
+
+  & .header__logo-h1
+    position: absolute
+    top: -9999px
+    color: white
+
+  & .header__logo-img
+    width: 75px
+    height: 75px
