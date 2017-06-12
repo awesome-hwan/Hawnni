@@ -1,5 +1,6 @@
 module.exports = "./backGround"
 
+
 var first = document.querySelector(".first");
 var second = document.querySelector(".second");
 var third = document.querySelector(".third");
@@ -11,7 +12,14 @@ var six = document.querySelector(".six");
 var ulistChild = document.querySelector('.status');
 var dot = ulistChild.children;
 
+//page의 흰부분을 보이지 않기위해서
+//마우스가 화면을 끌어오면서 흰부분이 보임
+$(window).on('mousewheel', function(event) {
+   event.preventDefault();
+   event.stopPropagation();
 
+   return false;
+});
 dot[0].onclick = function () {
   dot[0].classList.add('active');
   first.classList.add('completely');
@@ -299,3 +307,24 @@ $(six).on("mousewheel", function (event) {
 
     }
   });
+
+//loginbox 나타내기
+var signbox = document.querySelector('.signbox');
+
+
+
+  document.onmousewheel = function () {
+    if ( $(first).hasClass('old-hat') === false) {
+    signbox.style.opacity = '0';
+  } else if( $(first).hasClass('old-hat') === true ){
+    signbox.style.opacity = '1';
+  }
+};
+
+  document.onclick = function () {
+    if ( $(first).hasClass('old-hat') === false) {
+    signbox.style.opacity = '0';
+  } else if( $(first).hasClass('old-hat') === true ){
+    signbox.style.opacity = '1';
+  }
+};
