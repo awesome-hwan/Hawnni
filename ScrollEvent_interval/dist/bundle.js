@@ -84,6 +84,9 @@ var six = document.querySelector(".six");
 var ulistChild = document.querySelector('.status');
 var dot = ulistChild.children;
 
+//회원 박스 컬러 바꾸기
+var signup_color = document.querySelector('.signup__button')
+
 //page의 흰부분을 보이지 않기위해서
 //마우스가 화면을 끌어오면서 흰부분이 보임
 $(window).on('mousewheel', function(event) {
@@ -139,6 +142,8 @@ dot[1].onclick = function () {
   four.classList.remove('completely');
   five.classList.remove('completely');
   six.classList.remove('completely');
+
+  signup_color.setAttribute('style','color: #56bc8a')
 }
 dot[2].onclick = function () {
   dot[2].classList.add('active');
@@ -164,6 +169,8 @@ dot[2].onclick = function () {
   four.classList.remove('completely');
   five.classList.remove('completely');
   six.classList.remove('completely');
+
+  signup_color.setAttribute('style','color: #a77dc2')
 };
 dot[3].onclick = function () {
   dot[3].classList.add('active');
@@ -188,6 +195,8 @@ dot[3].onclick = function () {
   third.classList.remove('completely');
   five.classList.remove('completely');
   six.classList.remove('completely');
+
+  signup_color.setAttribute('style','color: #36465d');
 };
 dot[4].onclick = function () {
   dot[4].classList.add('active');
@@ -214,7 +223,7 @@ dot[4].onclick = function () {
   four.classList.remove('completely');
   six.classList.remove('completely');
 
-
+  signup_color.setAttribute('style','color: #f2992e');
 };
 dot[5].onclick = function () {
   dot[5].classList.add('active');
@@ -240,6 +249,7 @@ dot[5].onclick = function () {
   four.classList.remove('completely');
   five.classList.remove('completely');
 
+  signup_color.setAttribute('style','color: #36465d');
 }
 
 
@@ -258,8 +268,10 @@ $(first).on("mousewheel", function (event) {
     dot[0].classList.remove('active');
     dot[1].classList.add('active');
 
+    signup_color.setAttribute('style','color: #56bc8a');
     setTimeout(function() {
         second.classList.add('completely');
+
     }, 1500);
 
   }
@@ -274,8 +286,10 @@ $(second).on("mousewheel", function (event) {
     dot[1].classList.remove('active');
     dot[2].classList.add('active');
 
+    signup_color.setAttribute('style','color: #a77dc2');
     setTimeout(function() {
         third.classList.add('completely');
+
     }, 1500);
 
   } else if ( event.originalEvent.wheelDelta > 0 && $(second).hasClass('completely') === true ){
@@ -285,8 +299,10 @@ $(second).on("mousewheel", function (event) {
     dot[1].classList.remove('active');
     dot[0].classList.add('active');
 
+    signup_color.setAttribute('style','color: #56bc8a');
     setTimeout(function() {
         first.classList.add('completely');
+
     }, 1500);
 
   }
@@ -300,8 +316,11 @@ $(third).on("mousewheel", function (event) {
 
     dot[2].classList.remove('active');
     dot[3].classList.add('active');
+
+    signup_color.setAttribute('style','color: #36465d');
     setTimeout(function() {
         four.classList.add('completely');
+
     }, 1500);
 
   } else if (event.originalEvent.wheelDelta > 0 && $(third).hasClass('completely') === true){
@@ -310,8 +329,11 @@ $(third).on("mousewheel", function (event) {
 
         dot[2].classList.remove('active');
         dot[1].classList.add('active');
+
+        signup_color.setAttribute('style','color: #56bc8a');
     setTimeout(function() {
       second.classList.add('completely');
+
     }, 1500);
   }
   });
@@ -324,8 +346,11 @@ $(four).on("mousewheel", function (event) {
 
     dot[3].classList.remove('active');
     dot[4].classList.add('active');
+
+    signup_color.setAttribute('style','color: #f2992e');
     setTimeout(function() {
         five.classList.add('completely');
+
     }, 1500);
 
   } else if (event.originalEvent.wheelDelta > 0 && $(four).hasClass('completely') === true){
@@ -334,8 +359,11 @@ $(four).on("mousewheel", function (event) {
 
         dot[3].classList.remove('active');
         dot[2].classList.add('active');
+
+        signup_color.setAttribute('style','color: #a77dc2');
     setTimeout(function() {
       third.classList.add('completely');
+
     }, 1500);
   }
   });
@@ -348,8 +376,11 @@ $(five).on("mousewheel", function (event) {
 
     dot[4].classList.remove('active');
     dot[5].classList.add('active');
+
+      signup_color.setAttribute('style','color: #36465d');
     setTimeout(function() {
         six.classList.add('completely');
+
     }, 1500);
 
   } else if (event.originalEvent.wheelDelta > 0 && $(five).hasClass('completely') === true){
@@ -358,8 +389,11 @@ $(five).on("mousewheel", function (event) {
 
         dot[4].classList.remove('active');
         dot[3].classList.add('active');
+
+          signup_color.setAttribute('style','color: #36465d');
     setTimeout(function() {
       four.classList.add('completely');
+
     }, 1500);
   }
   });
@@ -373,8 +407,11 @@ $(six).on("mousewheel", function (event) {
 
     dot[5].classList.remove('active');
     dot[4].classList.add('active');
+
+    signup_color.setAttribute('style','color: #f2992e');
     setTimeout(function() {
       five.classList.add('completely');
+
     }, 1500);
 
     }
@@ -395,9 +432,11 @@ var signbox = document.querySelector('.signbox');
 
   document.onclick = function () {
     if ( $(first).hasClass('old-hat') === false) {
-    signbox.style.opacity = '0';
+    // signbox.style.opacity = '0';
+     signbox.setAttribute('style', 'opacity:0');
   } else if( $(first).hasClass('old-hat') === true ){
-    signbox.style.opacity = '1';
+    // signbox.style.opacity = '1';
+    signbox.setAttribute('style', 'opacity:1');
   }
 };
 
